@@ -83,7 +83,7 @@ void bread_monitor_loop() {
     char commandText[512];
     snprintf(commandText, 512, "{\"value\":{\"humidity\":%4.2f,\"temp\":%4.2f,\"distance\":%ld}}", humidity,
              temperature, distance);
-    if (!send_data(commandText)) {
+    if (!send_data(commandText,MQTT_HUMIDITY_TOPIC)) {
       LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());
     }
   }

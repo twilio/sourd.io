@@ -130,6 +130,16 @@ bool send_data(char *data) {
   return (mqtt->publish(MQTT_PUBLISH_TOPIC, message) == 0);
 }
 
+bool send_data(char *data, const char *topic) {
+  MqttClient::Message message;
+  message.qos        = MqttClient::QOS0;
+  message.retained   = false;
+  message.dup        = false;
+  message.payload    = data;
+  message.payloadLen = strlen(data);
+  return (mqtt->publish(topic, message) == 0);
+}
+
 void mqtt_disconnect() {
   LOG(L_INFO, "Disconnecting mqtt client and ip stack\r\n");
   if (mqtt) {

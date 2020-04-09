@@ -22,9 +22,14 @@
 #define MQTT_CLIENT_ID "sourdough-bread-monitor"
 // adafruit client id: your username
 
-// The topic to publish your data to
+// The topic to publish your data to. This is the "catch all" topic
 #define MQTT_PUBLISH_TOPIC "sourdough-bread-monitor/data"
 // adafruit topic name: "your-username-here/feeds/breadmonitor/json"
+
+// subtopics for publishing specific humidity, temperature, and distance data
+#define MQTT_HUMIDITY_TOPIC "your-username-here/feeds/breadmonitor/humidity/json"
+#define MQTT_TEMP_TOPIC "your-username-here/feeds/breadmonitor/humidity/json"
+#define MQTT_DISTANCE_TOPIC "your-username-here/feeds/breadmonitor/humidity/json"
 
 // The topic to get 'sleep'/wakeup events from
 #define MQTT_STATE_TOPIC "sourdough-bread-monitor/state"

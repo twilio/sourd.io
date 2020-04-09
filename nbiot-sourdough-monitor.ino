@@ -1,5 +1,6 @@
 // Tell it to include the important stuff from this sketch
 #include "config.h"
+#include "mqttcreds.h"
 #include "modem.h"
 #include "mqtt.h"
 
@@ -22,7 +23,7 @@ DHT dht(SENSOR_PIN, DHTTYPE);
 #define ULTRASONIC_PIN 38
 Ultrasonic UltrasonicRanger(ULTRASONIC_PIN);
 
-// we will send it every 20 seconds or so (this is probably high)
+// we will send it every 5 min or so, 20 seconds for debugging though
 #define SEND_INTERVAL (20 * 1000)
 
 
@@ -80,7 +81,7 @@ void bread_monitor_loop() {
     last_send = millis();
 
     char commandText[512];
-    snprintf(commandText, 512, "{\"device\":\"%.*s\",\"humidity\":%4.2f,\"temp\":%4.2f,\"distance\":%ld}", imei.len, imei.s, humidity,
+    snprintf(commandText, 512, "{\"value\":{\"humidity\":%4.2f,\"temp\":%4.2f,\"distance\":%ld}}", humidity,
              temperature, distance);
     if (!send_data(commandText)) {
       LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());

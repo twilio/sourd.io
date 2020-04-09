@@ -23,7 +23,7 @@ DHT dht(SENSOR_PIN, DHTTYPE);
 #define ULTRASONIC_PIN 38
 Ultrasonic UltrasonicRanger(ULTRASONIC_PIN);
 
-// we will send it every 5 min or so, 20 seconds for debugging though
+// we will send it every 20 second or so
 #define SEND_INTERVAL (20 * 1000)
 
 
@@ -80,11 +80,22 @@ void bread_monitor_loop() {
     long distance     = UltrasonicRanger.MeasureInCentimeters();
     last_send = millis();
 
-    char commandText[512];
-    snprintf(commandText, 512, "{\"value\":{\"humidity\":%4.2f,\"temp\":%4.2f,\"distance\":%ld}}", humidity,
-             temperature, distance);
-    if (!send_data(commandText,MQTT_HUMIDITY_TOPIC)) {
+    // sending individually to feeds
+    char humidityText[512];
+    char tempText[512];
+    char distanceText[512];
+    snprintf(humidityText, 512, "{\"value\":%4.2f}", humidity);
+    snprintf(tempText,512, "{\"value\":%4.2f}",temperature);
+    snprintf(distanceText,512, "{\"value\":%ld}",distance);
+    if (!send_data(humidityText,MQTT_HUMIDITY_TOPIC)) {
       LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());
     }
+    if (!send_data(tempText,MQTT_TEMP_TOPIC)) {
+      LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());
+    }
+    if (!send_data(distanceText,MQTT_DISTANCE_TOPIC)) {
+      LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());
+    }
+    
   }
 }

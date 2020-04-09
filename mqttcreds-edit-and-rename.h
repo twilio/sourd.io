@@ -27,9 +27,10 @@
 // adafruit topic name: "your-username-here/feeds/breadmonitor/json"
 
 // subtopics for publishing specific humidity, temperature, and distance data
-#define MQTT_HUMIDITY_TOPIC "your-username-here/feeds/breadmonitor/humidity/json"
-#define MQTT_TEMP_TOPIC "your-username-here/feeds/breadmonitor/humidity/json"
-#define MQTT_DISTANCE_TOPIC "your-username-here/feeds/breadmonitor/humidity/json"
+// these are the adafruit ones for making groups
+#define MQTT_HUMIDITY_TOPIC "your-username-here/g/breadmonitor.humidity/json"
+#define MQTT_TEMP_TOPIC "your-username-here/g/breadmonitor.temp/json"
+#define MQTT_DISTANCE_TOPIC "your-username-here/g/breadmonitor.distance/json"
 
 // The topic to get 'sleep'/wakeup events from
 #define MQTT_STATE_TOPIC "sourdough-bread-monitor/state"

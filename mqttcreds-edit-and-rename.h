@@ -66,6 +66,7 @@
 
 #endif
 
+/***-- ADAFRUIT.IO --***/
 #if defined(ADAFRUIT_MQTT)
 
     // adafruit uses auth
@@ -99,6 +100,7 @@
 
 #endif
 
+/***-- THINGSPEAK --***/
 #if defined(THINGSPEAK_MQTT)
 
     // thingspeak uses auth

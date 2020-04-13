@@ -1,17 +1,21 @@
-// you can use whatever broker you want! 
-// I tested with Thingspeak and Adafruit, so I've included the info for using those here
+// Make a copy of this file and call it mqttcreds.h 
+// Make sure it is in the same directory as your .ino
 
+// This file tells your .ino which broker to publish to, and how to communicate with it
+// You can use whatever broker you want! 
+// I tested with Thingspeak and Adafruit, so I've included the info for using those here
+// You can also create your own custom broker
 
 /*** Picking A Broker ***/
 
 // Adafruit docs: https://io.adafruit.com/api/docs/mqtt.html
 // Set up Adafruit creds below and Uncomment this next line to use Adafruit:
-     #define ADAFRUIT_MQTT
+    //  #define ADAFRUIT_MQTT
 // Thingspeak docs: https://www.mathworks.com/help/thingspeak/mqtt-api.html
 // Set up Thingspeak creds below and Uncomment this next line to use Thingspeak:
 //    #define THINGSPEAK_MQTT
 // Or do your own thing! Set up custom creds below and uncomment this next line to do something custom:
-    // #define CUSTOM_MQTT
+    #define CUSTOM_MQTT
 
 /***-- CUSTOM BROKER --***/
 #if defined(CUSTOM_MQTT)

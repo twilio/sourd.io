@@ -80,7 +80,20 @@ void bread_monitor_loop() {
     long distance     = UltrasonicRanger.MeasureInCentimeters();
     last_send = millis();
 
-    // sending individually to feeds
+    #if defined(CUSTOM_MQTT)
+    // sending data to a custom MQTT broker. Edit this to work with your broker!
+    // this part will only be compiled if we are pubishing to a custom broker! (see mqttcreds-edit-and-rename.h)
+    char commandText[512];
+    // edit the below text to fit your broker's needs!
+    snprintf(commandText, 512, "{\"device\":\"%.*s\",\"humidity\":%4.2f,\"temp\":%4.2f,\"distance\":%ld}", imei.len, imei.s, humidity,temperature, distance);
+    if (!send_data(commandText)) {
+      LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());
+    }
+    #endif
+
+    #if defined(ADAFRUIT_MQTT)
+    // sending data to Adafruit.io feeds, using Adafruit's json formatting
+    // this part will only be compiled if we are pubishing to Adafruit! (see mqttcreds-edit-and-rename.h)
     char humidityText[512];
     char tempText[512];
     char distanceText[512];
@@ -96,6 +109,17 @@ void bread_monitor_loop() {
     if (!send_data(distanceText,MQTT_DISTANCE_TOPIC)) {
       LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());
     }
-    
+    #endif
+
+    #if defined(THINGSPEAK_MQTT)
+    // sending individually to Thingspeak channels, using Thingspeak query formatting
+    // this part will only be compiled if we are pubishing to Thingspeak! (see mqttcreds-edit-and-rename.h)
+    char pubText[512];
+    snprintf(pubText, 512, "field1=%4.2f&field2=%4.2f&field3=%ld&status=MQTTPUBLISH", humidity, temperature, distance);
+    if (!send_data(pubText,MQTT_PUBLISH_TOPIC)) {
+      LOG(L_WARN, "Error publishing message: (client connected status: %d)\r\n", mqtt->isConnected());
+    }
+    #endif
+
   }
 }

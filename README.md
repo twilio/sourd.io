@@ -10,7 +10,7 @@ With Twilio's Narrowband IoT Developer Kit, we can build a little monitor that h
 
 ### Why Narrowband?
 
-[Twilio's Narrowband IoT dev kit](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?campaign=nbsdm01gh) happens to have some great sensors we can use to get started, and it's also designed for constant, low-power connectivity, which is what I want for this particular product. Cellular connectivity also means we don't have to do any setup or fight with our Wi-Fi routers.
+[Twilio's Narrowband IoT dev kit](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?utm_source=github&utm_medium=repo&utm_campaign=sour01) happens to have some great sensors we can use to get started, and it's also designed for constant, low-power connectivity, which is what I want for this particular product. Cellular connectivity also means we don't have to do any setup or fight with our Wi-Fi routers.
 
 The downside to Twilio Narrowband is that it only works in the US. If you're hoping to monitor your bread from outside the US, stay tuned! I'm planning another bread monitor in the future that connects with Super SIM, which is available everywhere.
 
@@ -20,7 +20,7 @@ The downside to Twilio Narrowband is that it only works in the US. If you're hop
 
 #### The Basics: What you need to get a proof-of-concept up and running
 - If you haven’t yet, sign up for a Twilio Account. If you sign up through [this link](http://www.twilio.com/referral/9nItun), you’ll get an extra $10 in credit when you upgrade.
-- 1 x [Twilio Developer Kit for Narrowband IoT](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?campaign=nbsdm01gh). Dev kits are currently ordered through the console. To order, first add your payment info to your Twilio account, then go to the [Wireless order page](https://www.twilio.com/console/wireless/orders) and fill out the form.
+- 1 x [Twilio Developer Kit for Narrowband IoT](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?utm_source=github&utm_medium=repo&utm_campaign=sour01). Dev kits are currently ordered through the console. To order, first add your payment info to your Twilio account, then go to the [Wireless order page](https://www.twilio.com/console/wireless/orders?utm_source=github&utm_medium=repo&utm_campaign=sour01) and fill out the form.
 - 1 x LiPo battery 3.7V 1900MAH (35mm x 50mm) (Note: this is not the one that comes in the kit)
 - The [Arduino IDE](https://www.arduino.cc/en/main/software)
 - This repo
@@ -37,7 +37,7 @@ The downside to Twilio Narrowband is that it only works in the US. If you're hop
 
 #### Bringing your Narrowband Kit online
 
-Rather than replicating the tutorial here, I'm going to suggest that you follow the steps in the [Narrowband Kit Quickstart](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?campaign=nbsdm01gh) to get your Twilio SIM registered and your libraries installed. The one exception to these instructions is that you should use your other LiPo battery rather than the thin, square one that comes in the Narrowband Kit.
+Rather than replicating the tutorial here, I'm going to suggest that you follow the steps in the [Narrowband Kit Quickstart](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?utm_source=github&utm_medium=repo&utm_campaign=sour01) to get your Twilio SIM registered and your libraries installed. The one exception to these instructions is that you should use your other LiPo battery rather than the thin, square one that comes in the Narrowband Kit.
 
 Check that the code compiles. You can even try uploading it and resetting the board to see if you can get it to come online. Once your board is making happy blue lights, then come back to this tutorial.
 

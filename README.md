@@ -56,7 +56,7 @@ You also may need to install additional libraries for the Grove Temperature/Humi
 https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor
 https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger
 
-You can download these as .zip files and use `Sketch > Include Library > Add .ZIP Library...` to add them.
+You can download these as .zip files and use `Sketch > Include Library > Add .ZIP Library...` to add them. Afterward, restart the Arduino IDE.
 
 Next, put your board in bootloader mode by holding the bootloader button and tapping the reset button. Compile and upload `nbiot-sourdough-monitor.ino`.
 

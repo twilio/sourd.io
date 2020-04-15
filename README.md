@@ -47,11 +47,18 @@ This kit comes with several sensors. We're going to use the Ultrasonic Distance 
 
 #### Add custom bread firmware
 
-Download or clone this repo and open the folder `nbiot-sourdough-monitor` in Arduino. Add your MQTT info to the file `mqttcreds-edit-and-rename.h` and then-- you guessed it-- rename it to `mqttcreds.h`
+Download or clone this repo and open the folder `nbiot-sourdough-monitor` in Arduino. Add your MQTT info to the file `mqttcreds-edit-and-rename.h` and then-- you guessed it-- rename it to `mqttcreds.h`. 
 
 To fill out this file, you'll probably need to actually set up a broker. Instructions in the file tell you what you need to set up Adafruit IO or Thingspeak to work with this monitor, since those have an easy way to create public visualizations so you can share your bread's health with friends. Feel free to use a different broker of your choice as well!
 
-Put your board in bootloader mode by holding the bootloader button and tapping the reset button. Compile and upload `nbiot-sourdough-monitor.ino`.
+You also may need to install additional libraries for the Grove Temperature/Humidity and Ultrasonic Ranger sensors. Those can be found at the following links:
+
+https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor
+https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger
+
+You can download these as .zip files and use `Sketch > Include Library > Add .ZIP Library...` to add them.
+
+Next, put your board in bootloader mode by holding the bootloader button and tapping the reset button. Compile and upload `nbiot-sourdough-monitor.ino`.
 
 If all is working, then your board should come online with a happy blue light. Open the Serial Monitor to see if the board is sending commands.
 

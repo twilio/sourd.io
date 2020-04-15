@@ -1,6 +1,8 @@
-# Twilio-Powered Narrowband IoT Sourdough Starter Monitor
+# sourd.io: An internet connected sourdough starter data monitor
 
-### Like a Fitbit, but for your sourdough starter
+![sourd.io monitor](/img/sourdio-assembled.jpg)
+
+### Build an internet connected sourdough Fitbit
 
 A sourdough starter is a little yeast-driven pet that eats flour and water and makes sourdough. More and more people are keeping these delightful critters in their houses, feeding them when they start to look sluggish and baking bread with them every few days.
 
@@ -12,30 +14,36 @@ Twilio's Narrowband IoT dev kit happens to have some great sensors we can use to
 
 The downside to Twilio Narrowband is that it only works in the US. If you're hoping to monitor your bread from outside the US, stay tuned! I'm planning another bread monitor in the future that connects with Super SIM, which is available everywhere.
 
+![sourd.io monitor](/img/sourdio-sensors.jpg)
+
 ### What you'll need
-
-_The Basics: What you need to get a proof-of-concept up and running_
-- 1 x [Twilio Developer Kit for Narrowband IoT](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?campaign=nbsdm01). Dev kits are currently ordered through the console. To order, first add your payment info to your Twilio account, then go to [the Wireless order page](https://www.twilio.com/console/wireless/orders) and fill out the form.
+#### The Basics: What you need to get a proof-of-concept up and running
+- If you haven’t yet, sign up for a Twilio Account. If you sign up through this link, you’ll get an extra $10 in credit when you upgrade.
+- 1 x Twilio Developer Kit for Narrowband IoT. Dev kits are currently ordered through the console. To order, first add your payment info to your Twilio account, then go to the Wireless order page and fill out the form.
+- 1 x LiPo battery 3.7V 1900MAH (35mm x 50mm) (Note: this is not the one that comes in the kit)
+- The Arduino IDE
+- This repo
+- An MQTT broker of choice. This build has been tested with Adafruit IO and Thingspeak, and has info on how to set that up in the `/nbiot-sourdough-monitor` folder of the repo.
 - The United States. Twilio Narrowband currently works in the US.
-- The (Arduino IDE)[https://www.arduino.cc/en/main/software]
-- An MQTT broker of choice. This build has been tested with Adafruit IO and Thingspeak, and has info on how to set that up in the `/nbiot-sourdough-monitor` folder of this repo.
 
-_Enclosures: Making it pretty_
-- A way to print the .stl files found in the `/enclosure` folder of this repo
-- [# of screws and type]
-- A ball jar with canning lid (the one where the center is removeable)
+#### Enclosures: What you need to make it pretty
+- A way to print the .stl files found in the `/enclosure` folder of this repo. You can use a 3D printer, or go through a third-party service like 3D Hubs.
+- 11 x M2.2 8mm screws
+- 1 x Ball jar with canning lid (the one where the center is removable)
+- Hot Glue Gun (if you want your sourd.io to have ears and a hat)
 
 ### Putting it together
+#### Bringing your Narrowband Kit online
 
-_Bringing your Narrowband Kit online_
+Rather than replicating the tutorial here, I'm going to suggest that you follow the steps in the Narrowband Kit Quickstart to get your Twilio SIM registered and your libraries installed. The one exception to these instructions is that you should use your other LiPo battery rather than the thin, square one that comes in the Narrowband Kit.
 
-Rather than replicating the tutorial here, I'm going to suggest that you follow the steps in the [Narrowband Kit Quickstart](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?campaign=nbsdm01) to get your Twilio SIM registered and your libraries installed. Check that the code compiles. You can even try uploading it and resetting the board to see if you can get it to come online. Once your board is making happy blue lights, then come back to this tutorial.
+Check that the code compiles. You can even try uploading it and resetting the board to see if you can get it to come online. Once your board is making happy blue lights, then come back to this tutorial.
 
-_Hooking up your hardware_
+#### Hook up your hardware
 
-This kit comes with several sensors. We're going to use the Ultrasonic Distance sensor and the Temperature/Humidity sensor. Plug the distance sensor into [PORT] and the temp/humidity sensor into [PORT].
+This kit comes with several sensors. We're going to use the Ultrasonic Distance sensor and the Temperature/Humidity sensor. Plug the distance sensor into D38 and the temp/humidity sensor into D20.
 
-_Adding custom bread firmware_
+#### Add custom bread firmware
 
 Download or clone this repo and open the folder `nbiot-sourdough-monitor` in Arduino. Add your MQTT info to the file `mqttcreds-edit-and-rename.h` and then-- you guessed it-- rename it to `mqttcreds.h`
 
@@ -45,19 +53,22 @@ Put your board in bootloader mode by holding the bootloader button and tapping t
 
 If all is working, then your board should come online with a happy blue light. Open the Serial Monitor to see if the board is sending commands.
 
-_See your data_
+#### See your data
 
 Navigate to your chosen MQTT broker and check out the commands coming into your channel or dashboard!
 
-_Assembling the enclosure_
+#### Assembling the enclosure
 
-Print the .stl files in the `/enclosure` folder. Assemble like this:
+Print the .stl files in the `/enclosure` folder.
 
-[Image]
+Remove the Grove Header from the Temperature/Humidity Sensor and solder the wires directly to the back of the board (opposite the blue sensor).
+
+Assemble like this:
+
+![sourd.io assembly instructions](/img/sourdio-assembly-directions.png)
 
 Screw the bread monitor onto your jar and put your sourdough starter in the jar!
 
-_If you don't have a sourdough starter_
+#### Monitor your bread
 
-There are plenty of excellent ways for you to get a sourdough starter. Here are some favorite tutorials of people at Twilio who are now baking bread regularly:
-- LINKS
+Humidity is a particularly interesting one to watch. In the enclosed environment of the jar, the humidity produced as the yeast respirates is delightfully detectable. My monitor may be online right now; feel free to look at the data here.

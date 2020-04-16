@@ -2,7 +2,7 @@
 
 ![sourd.io monitor](/img/sourdio-assembled.jpg)
 
-### Build an internet connected sourdough Fitbit
+### Build an internet connected fitness tracker for your loaf
 
 A sourdough starter is a little yeast-driven pet that eats flour and water and makes sourdough. More and more people are keeping these delightful critters in their houses, feeding them when they start to look sluggish and baking bread with them every few days.
 
@@ -12,7 +12,7 @@ With Twilio's Narrowband IoT Developer Kit, we can build a little monitor that h
 
 [Twilio's Narrowband IoT dev kit](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?utm_source=github&utm_medium=repo&utm_campaign=sour01) happens to have some great sensors we can use to get started, and it's also designed for constant, low-power connectivity, which is what I want for this particular product. Cellular connectivity also means we don't have to do any setup or fight with our Wi-Fi routers.
 
-The downside to Twilio Narrowband is that it only works in the US. If you're hoping to monitor your bread from outside the US, stay tuned! I'm planning another bread monitor in the future that connects with Super SIM, which is available everywhere.
+The downside to Twilio Narrowband is that it only works in the US. If you're hoping to monitor your bread from outside the US, stay tuned! I'm planning another bread monitor in the future that connects with [Super SIM](https://www.twilio.com/wireless/super-sim?utm_source=github&utm_medium=repo&utm_campaign=sour01), which is available everywhere.
 
 ![sourd.io monitor](/img/sourdio-sensors.jpg)
 

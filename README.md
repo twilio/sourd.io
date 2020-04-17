@@ -81,3 +81,24 @@ Screw the bread monitor onto your jar and put your sourdough starter in the jar!
 #### Monitor your bread
 
 Humidity is a particularly interesting one to watch. In the enclosed environment of the jar, the humidity produced as the yeast respirates is delightfully detectable. My monitor may be online right now; feel free to look at the data [here](https://thingspeak.com/channels/1037031).
+
+
+#### Fine Print
+
+Someone told me I should add license info here! Please simply don't be a jerk when using this repo and if you're interested in doing Something Serious with it, I'd love to hear. Reach out to me on [Twitter](https://twitter.com/christinesunu) or here on Github.
+
+Putting this under the Apache 2.0 license, which is also what is used by the [Twilio repo that the code sample is adapted from](https://github.com/twilio/breakout-massive-iot)
+
+Copyright 2020 Christine Sunu
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.

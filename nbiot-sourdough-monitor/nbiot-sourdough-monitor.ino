@@ -1,3 +1,9 @@
+// This sketch is based on the original Twilio Breakout SDK sample for the Narroband IoT kit,
+// with a number of alterations, edits, and a lot of comments
+// Twilio Breakout SDK for Massive IoT: https://github.com/twilio/breakout-massive-iot
+
+// ok now for code
+
 // Tell it to include the important stuff from this sketch
 #include "config.h"
 #include "mqttcreds.h"

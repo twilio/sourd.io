@@ -30,7 +30,7 @@ The downside to Twilio Narrowband is that it only works in the US. If you're hop
 #### Enclosures: What you need to make it pretty
 - A way to print the .stl files found in the `/enclosure` folder of this repo. You can use a 3D printer, or go through a third-party service like 3D Hubs.
 - 11 x M2.2 8mm screws
-- 1 x Ball jar with canning lid (the one where the center is removable)
+- 1 x Ball jar with 2 1/2 inch canning lid (the one where the center is removable)
 - Hot Glue Gun (if you want your sourd.io to have ears and a hat)
 
 ### Putting it together
@@ -88,6 +88,7 @@ Humidity is a particularly interesting one to watch. In the enclosed environment
 Someone told me I should add license info here! Please simply don't be a jerk when using this repo and if you're interested in doing Something Serious with it, I'd love to hear. Reach out to me on [Twitter](https://twitter.com/christinesunu) or here on Github.
 
 Putting this under the Apache 2.0 license, which is also what is used by the [Twilio repo that the code sample is adapted from](https://github.com/twilio/breakout-massive-iot)
+
 
 Copyright 2020 Christine Sunu
 

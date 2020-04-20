@@ -19,7 +19,7 @@ The downside to Twilio Narrowband is that it only works in the US. If you're hop
 ### What you'll need
 
 #### The Basics: What you need to get a proof-of-concept up and running
-- If you haven’t yet, sign up for a Twilio Account. If you sign up through [this link](http://www.twilio.com/referral/9nItun), you’ll get an extra $10 in credit when you upgrade.
+- If you haven’t yet, sign up for a Twilio Account. If you sign up for a new account through [this link](http://www.twilio.com/referral/9nItun), you’ll get an extra $10 in credit when you upgrade.
 - 1 x [Twilio Developer Kit for Narrowband IoT](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?utm_source=github&utm_medium=repo&utm_campaign=sour01). Dev kits are currently ordered through the console. To order, first add your payment info to your Twilio account, then go to the [Wireless order page](https://www.twilio.com/console/wireless/orders?utm_source=github&utm_medium=repo&utm_campaign=sour01) and fill out the form.
 - 1 x LiPo battery 3.7V 1900MAH (35mm x 50mm) (Note: this is not the one that comes in the kit)
 - The [Arduino IDE](https://www.arduino.cc/en/main/software)

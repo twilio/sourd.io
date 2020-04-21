@@ -39,6 +39,8 @@ The downside to Twilio Narrowband is that it only works in the US. If you're hop
 
 Rather than replicating the tutorial here, I'm going to suggest that you follow the steps in the [Narrowband Kit Quickstart](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt?utm_source=github&utm_medium=repo&utm_campaign=sour01) to get your Twilio SIM registered and your libraries installed. The one exception to these instructions is that you should use your other LiPo battery rather than the thin, square one that comes in the Narrowband Kit.
 
+**Windows 10 users** may run into problems connecting to their Narrowband Kit. If you do, follow this guide by [Scott Hanselman](https://www.hanselman.com/blog/HowToFixDfuutilSTMWinUSBZadigBootloadersAndOtherFirmwareFlashingIssuesOnWindows.aspx) to get going. You'll want to do this before the "[Connect to the MQTT broker and publish messages](https://www.twilio.com/docs/wireless/quickstart/alfa-developer-kit-mqtt#connect-to-the-mqtt-broker-and-publish-messages)" section in the Quickstart.
+
 Check that the code compiles. You can even try uploading it and resetting the board to see if you can get it to come online. Once your board is making happy blue lights, then come back to this tutorial.
 
 #### Hook up your hardware

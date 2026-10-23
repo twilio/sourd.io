@@ -105,3 +105,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+### Live Sourdough Hydration & Starter Feeding Calculator Reference
+
+> **Note on `sourd.io` Web Link:** The original `http://www.sourd.io/` web demo domain linked in the repository header is now retired (`HTTP 404`).
+> If you are calibrating your starter's feeding ratios, inoculation percentage, or temperature-compensated fermentation schedule alongside this sensor build, you can use the free, zero-login online reference calculator at **[SourdoughCalc.app](https://sourdoughcalc.app)** (and the **[Starter Feeding Ratio Calculator](https://sourdoughcalc.app/starter-feeding-calculator)**).
